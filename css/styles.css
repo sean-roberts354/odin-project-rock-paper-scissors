@@ -1,0 +1,189 @@
+/* ---------- */
+/* CSS Resets */
+/* ---------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------- */
+/* Color Variables */
+/* ----------------*/
+:root {
+      /* Color Palette URL: https://colorhunt.co/palette/006e7ff8cb2eee5007b22727 */
+
+      /* These are HSL values. Be sure to wrap variable in hsl() */
+      --clr-teal: 188 100% 25%;
+      --clr-yellow: 47 94% 58%;
+      --clr-orange: 19 94% 48%;
+      --clr-red: 0 64% 43%;
+}
+
+/* ------------- */
+/* Custom Styles */
+/* ------------- */
+
+body {
+      color: whitesmoke;
+      font-family: 'Montserrat', sans-serif;
+      background-color: hsl(var(--clr-teal));
+}
+
+main.app {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+
+h1 {
+      font-size: 4rem;
+}
+
+.instructions {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+}
+
+.button-container {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      margin-bottom: 1rem;
+}
+
+button {
+      background-color: inherit;
+      aspect-ratio: 1;
+      border: none;
+}
+
+ button:hover i {
+      color: hsl(var(--clr-orange));
+      transition: all 200ms ease-in-out;
+ }
+
+i {
+      font-size: 5rem;
+      color: hsl(var(--clr-yellow));
+      padding: 1rem;
+      transition: all 150ms ease-in-out;
+      cursor: pointer;
+}
+
+#results-output {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+}
+
+.scoreboard-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      border-bottom: solid 2px whitesmoke;
+      margin-bottom: 1rem;
+}
+
+.scoreboard {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+}
+
+.computer-score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+.player-score {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+}
+
+.computer-score p,
+.player-score p {
+      font-size: 1.5rem;
+      font-weight: 500;
+}
+
+#computer-score-output,
+#player-score-output {
+      font-size: 3rem;
+      font-weight: 500;
+}
+
+
