@@ -25,7 +25,11 @@ function getComputerMove() {
 
       let computerMove = getRandomNumberInRange(1, 3);
 
-      return computerMove.toString;
+      return computerMove.toString();
+}
+
+function getMoveCode(playerMove, computerMove) {
+      return playerMove + computerMove;
 }
 
 function getResults(playerMove, computerMove) {
@@ -70,9 +74,21 @@ function handleClick(buttonID) {
 
 function test(buttonID) {
       console.log('Works');
+
+      let playerMove = getPlayerMove(buttonID);
+      let computerMove = getComputerMove();
+      let moveCode = getMoveCode(playerMove, computerMove);
+
+
       let result = getPlayerMove(buttonID);
-      console.log(result);
-      console.log(typeof result);
+      console.log(playerMove);
+      console.log(typeof playerMove);
+      
+      console.log(computerMove);
+      console.log(typeof computerMove);
+
+      console.log(moveCode);
+      console.log(typeof moveCode);
 }
 
 
