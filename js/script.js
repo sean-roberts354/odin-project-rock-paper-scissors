@@ -32,8 +32,80 @@ function getMoveCode(playerMove, computerMove) {
       return playerMove + computerMove;
 }
 
-function getResults(playerMove, computerMove) {
+function getResults(moveCode) {
+      let results = new Object();
+      switch (moveCode) {
+            case "11":
+                  results = {
+                        moveCode: "11",
+                        message: "You both picked rock. Tie match."
+                  };
+                  break;
+            case "12":
+                  results = {
+                        moveCode: "12",
+                        message: "Paper beats rock. Computer wins."
+                  };
+                  break;
+            case "13":
+                  results = {
+                        moveCode: "13",
+                        message: "Rock beats scissors! You win!"
+                  };
+                  break;
+            case "21":
+                  results = {
+                        moveCode: "21",
+                        message: "Paper beats rock! You win!"
+                  };
+                  break;
+            case "22":
+                  results = {
+                        moveCode: "22",
+                        message: "You both picked paper. Tie match."
+                  };
+                  break;
+            case "23":
+                  results = {
+                        moveCode: "23",
+                        message: "Scissors beats paper. Computer wins."
+                  };
+                  break;
+            case "31":
+                  results = {
+                        moveCode: "31",
+                        message: "Rock beats scissors. Computer wins."
+                  };
+                  break;
+            case "32":
+                  results = {
+                        moveCode: "32",
+                        message: "Scissors beat paper! You win!"
+                  };
+                  break;
+            case "33":
+                  results = {
+                        moveCode: "33",
+                        message: "You both pick scissors. Tie match."
+                  };
+                  break;
+            case "41":
+            case "42":
+            case "43":
+                  results = {
+                        moveCode: "404",
+                        message: "Uh? How did you click that button? Try clicking one of the buttons above."
+                  };
+                  break;
+            default:
+                  results = {
+                        moveCode: "404",
+                        message: "Switch statement error"
+                  }
+                  break;
+      }
 
+      return results;
 }
 
 
@@ -78,9 +150,9 @@ function test(buttonID) {
       let playerMove = getPlayerMove(buttonID);
       let computerMove = getComputerMove();
       let moveCode = getMoveCode(playerMove, computerMove);
+      let results = getResults(moveCode);
 
 
-      let result = getPlayerMove(buttonID);
       console.log(playerMove);
       console.log(typeof playerMove);
       
@@ -89,6 +161,11 @@ function test(buttonID) {
 
       console.log(moveCode);
       console.log(typeof moveCode);
+
+      console.log(results);
+      console.log(typeof results);
+
+
 }
 
 
