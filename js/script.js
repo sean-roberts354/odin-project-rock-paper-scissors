@@ -37,55 +37,55 @@ function getResults(moveCode) {
       switch (moveCode) {
             case "11":
                   results = {
-                        moveCode: "11",
+                        winner: "tie",
                         message: "You both picked rock. Tie match."
                   };
                   break;
             case "12":
                   results = {
-                        moveCode: "12",
+                        winner: "computer",
                         message: "Paper beats rock. Computer wins."
                   };
                   break;
             case "13":
                   results = {
-                        moveCode: "13",
+                        winner: "player",
                         message: "Rock beats scissors! You win!"
                   };
                   break;
             case "21":
                   results = {
-                        moveCode: "21",
+                        winner: "player",
                         message: "Paper beats rock! You win!"
                   };
                   break;
             case "22":
                   results = {
-                        moveCode: "22",
+                        winner: "tie",
                         message: "You both picked paper. Tie match."
                   };
                   break;
             case "23":
                   results = {
-                        moveCode: "23",
+                        winner: "computer",
                         message: "Scissors beats paper. Computer wins."
                   };
                   break;
             case "31":
                   results = {
-                        moveCode: "31",
+                        winner: "computer",
                         message: "Rock beats scissors. Computer wins."
                   };
                   break;
             case "32":
                   results = {
-                        moveCode: "32",
+                        winner: "player",
                         message: "Scissors beat paper! You win!"
                   };
                   break;
             case "33":
                   results = {
-                        moveCode: "33",
+                        winner: "tie",
                         message: "You both pick scissors. Tie match."
                   };
                   break;
@@ -93,13 +93,13 @@ function getResults(moveCode) {
             case "42":
             case "43":
                   results = {
-                        moveCode: "404",
+                        winner: "tie",
                         message: "Uh? How did you click that button? Try clicking one of the buttons above."
                   };
                   break;
             default:
                   results = {
-                        moveCode: "404",
+                        winner: "tie",
                         message: "Switch statement error"
                   }
                   break;
