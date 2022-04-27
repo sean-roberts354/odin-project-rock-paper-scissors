@@ -108,7 +108,35 @@ function getResults(moveCode) {
       return results;
 }
 
+function updateMessage(message) {
+      let messageOutput = document.getElementById("results-output");
+      messageOutput.innerText = message;
+}
 
+function updateScore(winner) {
+      let computerScoreOutput = document.getElementById("computer-score-output");
+      let playerScoreOutput = document.getElementById("player-score-output");
+
+      let computerScore = computerScoreOutput.innerText;
+      let playerScore = playerScoreOutput.innerText;
+
+      switch (winner) {
+            case "tie":
+                  break;
+            case "computer":
+                  computerScore++;
+                  computerScoreOutput.innerText = computerScore;
+                  break;
+            case "player":
+                  playerScore++;
+                  playerScoreOutput.innerText = playerScore;
+                  break;
+            default:
+                  break;
+      }
+
+
+}
 
 
 /* 
@@ -125,13 +153,6 @@ Player : Computer = Outcome Code = Outcome
 3 : 2 = 32 = Player Wins
 3 : 3 = 33 = Tie
 */
-
-
-/* 
-let randomNumber = Math.floor((Math.random() * rangeEnd) + rangeStart);
-      randomNumber = randomNumber.toString();
-      return randomNumber;
- */
 
 
 function handleClick(buttonID) {
@@ -153,7 +174,7 @@ function test(buttonID) {
       let results = getResults(moveCode);
 
 
-      console.log(playerMove);
+      /* console.log(playerMove);
       console.log(typeof playerMove);
       
       console.log(computerMove);
@@ -163,7 +184,12 @@ function test(buttonID) {
       console.log(typeof moveCode);
 
       console.log(results);
-      console.log(typeof results);
+      console.log(typeof results); */
+
+      updateMessage(results.message);
+      updateScore(results.winner);
+      console.log(results.message);
+      console.log(results.winner);
 
 
 }
