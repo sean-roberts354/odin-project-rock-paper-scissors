@@ -1,11 +1,65 @@
 function getRandomNumberInRange(rangeStart, rangeEnd) {
-      let randomNum = Math.floor((Math.random() * rangeEnd) + rangeStart)
-      
-      if (rangeStart <= randomNum <= rangeEnd) {
-            return randomNum;
-      } else {
-            return "ERROR: Number out of specified range"
+      return Math.floor((Math.random() * rangeEnd) + rangeStart);
+}
+
+function getPlayerMove(buttonID) {
+      switch (buttonID) {
+            case "rock":
+                  return "1";
+            case "paper":
+                  return "2";
+            case "scissors":
+                  return "3";
+            case "test":
+                  return "4"
       }
+}
+
+function getComputerMove() {
+      /* 
+      1 = Rock
+      2 = Paper
+      3 = Scissors
+      4 = Test button
+      */
+
+      let computerMove = getRandomNumberInRange(1, 3);
+
+      return computerMove.toString;
+}
+
+function getResults(playerMove, computerMove) {
+
+}
+
+
+
+
+/* 
+Move permutations
+
+Player : Computer = Outcome Code = Outcome
+1 : 1 = 11 = Tie
+1 : 2 = 12 = Computer Wins
+1 : 3 = 13 = Player Wins
+2 : 1 = 21 = Player Wins
+2 : 2 = 22 = Tie
+2 : 3 = 23 = Computer Wins
+3 : 1 = 31 = Computer Wins
+3 : 2 = 32 = Player Wins
+3 : 3 = 33 = Tie
+*/
+
+
+/* 
+let randomNumber = Math.floor((Math.random() * rangeEnd) + rangeStart);
+      randomNumber = randomNumber.toString();
+      return randomNumber;
+ */
+
+
+function handleClick(buttonID) {
+      
 }
 
 
@@ -14,18 +68,11 @@ function getRandomNumberInRange(rangeStart, rangeEnd) {
 
 
 
+function test(buttonID) {
+      console.log('Works');
+      let result = getPlayerMove(buttonID);
+      console.log(result);
+      console.log(typeof result);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-document.querySelector(".function-test").addEventListener('click', () => {
-      console.log(getRandomNumberInRange(1, 10));
-});
