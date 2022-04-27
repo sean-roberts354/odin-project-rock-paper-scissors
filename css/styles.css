@@ -187,6 +187,9 @@ i {
 }
 
 .function-test {
+      /* I set this to visibility:hidden instead of display:none because it shows a funny message if you find it and click it */
+      visibility: hidden;      
+
       cursor: pointer;
       margin-block: 2rem;
       padding: 0.7rem 1.5rem;

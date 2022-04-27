@@ -22,13 +22,13 @@
       <h1>Rock Paper Scissors</h1>
       <p class="instructions">You get to play Rock Paper Scissors against your computer! Make your choice below!</p>
       <div class="button-container">
-            <button id="rock" onclick="handleClick(this.id)">
+            <button id="rock" onclick="handleClick(this.id)" tabindex="1">
                   <i class="fa-solid fa-hand-back-fist"></i>
             </button>
-            <button id="paper" onclick="handleClick(this.id)">
+            <button id="paper" onclick="handleClick(this.id)" tabindex="2">
                   <i class="fa-solid fa-hand"></i>
             </button>
-            <button id="scissors" onclick="handleClick(this.id)">
+            <button id="scissors" onclick="handleClick(this.id)" tabindex="3">
                   <i class="fa-solid fa-hand-scissors"></i>
             </button>
       </div>
@@ -44,8 +44,8 @@
                   <span id="player-score-output">0</span>
             </div>
       </div>
-      <!-- Added in to test functions; Display is set to none in css when not in use -->
-      <button id="test" class="function-test" onclick="handleClick(this.id)">Test</button>
+      <!-- Added in to test functions; Visibility is set to hidden in css when not in use -->
+      <button id="test" class="function-test" onclick="handleClick(this.id)" tabindex="4">Ohh, what's this? An easter egg perhaps?</button>
 </main>
 </body>
 
