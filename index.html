@@ -22,13 +22,13 @@
       <h1>Rock Paper Scissors</h1>
       <p class="instructions">You get to play Rock Paper Scissors against your computer! Make your choice below!</p>
       <div class="button-container">
-            <button id="rock">
+            <button id="rock" onclick="handleClick(this.id)">
                   <i class="fa-solid fa-hand-back-fist"></i>
             </button>
-            <button id="paper">
+            <button id="paper" onclick="handleClick(this.id)">
                   <i class="fa-solid fa-hand"></i>
             </button>
-            <button id="scissors">
+            <button id="scissors" onclick="handleClick(this.id)">
                   <i class="fa-solid fa-hand-scissors"></i>
             </button>
       </div>
@@ -45,7 +45,7 @@
             </div>
       </div>
       <!-- Added in to test functions; Display is set to none in css when not in use -->
-      <button class="function-test">Test</button>
+      <button id="test" class="function-test" onclick="handleClick(this.id)">Test</button>
 </main>
 </body>
 
