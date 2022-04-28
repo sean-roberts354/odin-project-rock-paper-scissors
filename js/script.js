@@ -166,17 +166,44 @@ function updateScore(winner) {
             default:
                   break;
       }
+      isGameFinished(playerScore, computerScore);
 }
 
+function isGameFinished(playerScore, computerScore) {
+      let winnerMessage = document.querySelector(".game-message");
+      let winner = document.querySelector(".game-winner");
+      let modal = document.querySelector(".modal");
+
+
+
+      if (playerScore > computerScore && playerScore == 5) {
+            // Player Wins
+            winnerMessage.innerText = "Congratulations!"
+            winner.innerText = "You Win!"
+            modal.style.visibility="visible";
+            document.querySelector(".modal-content").style.backgroundColor="hsl(144 90% 33%)";
+      } else if (playerScore < computerScore && computerScore == 5) {
+            // Computer Wins
+            winnerMessage.innerText = "So ein pech!"
+            winner.innerText = "Computer Wins ☹️";
+            modal.style.visibility="visible";
+            document.querySelector(".modal-content").style.backgroundColor="hsl(0 64% 43%)";
+      }
+}
+
+
+// Keeps track of which round the game is on. Declared at global scope because it's used by in handleClick() and startGame()
 let gameRound = 0
 
 function startGame() {
       updateMessage("reset");
       updateScore("reset");
+      gameRound = 0;
 
       let modal = document.querySelector(".modal");
       modal.style.visibility="hidden";
 }
+
 
 function handleClick(buttonID) {
       let results = getResults(getMoveCode(getPlayerMove(buttonID), getComputerMove()));
