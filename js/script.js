@@ -126,7 +126,12 @@ function getResults(moveCode) {
 
 function updateMessage(message) {
       let messageOutput = document.getElementById("results-output");
-      messageOutput.innerText = `Round ${gameRound}: ${message}`;
+
+      if (message === "reset") {
+            messageOutput.innerText = "What will you choose? Rock, Paper, Scissors?"
+      } else {
+            messageOutput.innerText = `Round ${gameRound}: ${message}`;
+      }
 }
 
 function updateScore(winner) {
@@ -151,12 +156,27 @@ function updateScore(winner) {
                   playerScoreOutput.innerText = playerScore;
                   finalPlayerScoreOutput.innerText = playerScore;
                   break;
+            case "reset":
+                  computerScore = 0;
+                  computerScoreOutput.innerText = computerScore;
+                  finalComputerScoreOutput.innerText = computerScore;
+                  playerScore = 0
+                  playerScoreOutput.innerText = playerScore;
+                  finalPlayerScoreOutput.innerText = playerScore;
             default:
                   break;
       }
 }
 
 let gameRound = 0
+
+function startGame() {
+      updateMessage("reset");
+      updateScore("reset");
+
+      let modal = document.querySelector(".modal");
+      modal.style.visibility="hidden";
+}
 
 function handleClick(buttonID) {
       let results = getResults(getMoveCode(getPlayerMove(buttonID), getComputerMove()));
