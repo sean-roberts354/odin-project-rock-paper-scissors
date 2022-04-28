@@ -123,9 +123,10 @@ function getResults(moveCode) {
       return results;
 }
 
+
 function updateMessage(message) {
       let messageOutput = document.getElementById("results-output");
-      messageOutput.innerText = message;
+      messageOutput.innerText = `Round ${gameRound}: ${message}`;
 }
 
 function updateScore(winner) {
@@ -155,8 +156,11 @@ function updateScore(winner) {
       }
 }
 
+let gameRound = 0
+
 function handleClick(buttonID) {
       let results = getResults(getMoveCode(getPlayerMove(buttonID), getComputerMove()));
+      gameRound++;
       updateMessage(results.message);
       updateScore(results.winner);
 }
