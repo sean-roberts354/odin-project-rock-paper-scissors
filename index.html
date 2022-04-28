@@ -47,6 +47,24 @@
       <!-- Added in to test functions; Visibility is set to hidden in css when not in use -->
       <button id="test" class="function-test" onclick="handleClick(this.id)" tabindex="4">Ohh, what's this? An easter egg perhaps?</button>
 </main>
+<div class="modal">
+      <div class="modal-content">
+            <p class="game-message">Congratulations!</p>
+            <p class="game-winner">You Win!</p>
+            <p class="final-score-header">Final Score</p>
+            <div class="game-final-score">
+                  <div class="computer-final-score-container">
+                        <p>Computer</p>
+                        <span class="computer-final-score-output">3</span>
+                  </div>
+                  <div class="player-final-score-container">
+                        <p>You</p>
+                        <span class="player-final-score-output">5</span>
+                  </div>
+            </div>
+            <button class="restart-game">Play Again</button>
+      </div>
+</div>
 </body>
 
 </html>
