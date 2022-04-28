@@ -209,7 +209,7 @@ i {
 }
 
 .modal {
-      visibility: visible;
+      visibility: hidden;
       z-index: 1;
 
       position: fixed;
