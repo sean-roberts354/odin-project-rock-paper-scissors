@@ -19,3 +19,6 @@ First things first, each move has a number value assigned to it which will be us
 5. The message (results.message) is passed to updateMessage() which updates the HTML on the page.
 
 6. The winner (results.winner) is passed to updateScore() which gets the current score on the page, adds 1 to the winner, and updates the score on the page.
+
+7. After score is updated, scores are passed to isGameFinished() which checks if one of the players has reached the winning score of 5, which causes a modal box to pop up stating game winner.
+8. Players can press a button to start another game which hides the modal box and sets scores back to 0.
