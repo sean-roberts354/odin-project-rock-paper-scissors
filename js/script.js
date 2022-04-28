@@ -130,7 +130,9 @@ function updateMessage(message) {
 
 function updateScore(winner) {
       let computerScoreOutput = document.getElementById("computer-score-output");
+      let finalComputerScoreOutput = document.querySelector(".computer-final-score-output");
       let playerScoreOutput = document.getElementById("player-score-output");
+      let finalPlayerScoreOutput = document.querySelector(".player-final-score-output");
 
       let computerScore = computerScoreOutput.innerText;
       let playerScore = playerScoreOutput.innerText;
@@ -141,10 +143,12 @@ function updateScore(winner) {
             case "computer":
                   computerScore++;
                   computerScoreOutput.innerText = computerScore;
+                  finalComputerScoreOutput.innerText = computerScore;
                   break;
             case "player":
                   playerScore++;
                   playerScoreOutput.innerText = playerScore;
+                  finalPlayerScoreOutput.innerText = playerScore;
                   break;
             default:
                   break;
@@ -156,3 +160,18 @@ function handleClick(buttonID) {
       updateMessage(results.message);
       updateScore(results.winner);
 }
+
+
+
+
+
+
+/* 
+
+To-do
+- Create startGame which resets game and runs on page load or when restart game button is pushed
+- Modify existing functions to also keep track of which round it is
+- When updating message, display round number
+- Keep track of score, if one player reaches 5 end round and display modal showing round winner and option to restart game
+
+*/
