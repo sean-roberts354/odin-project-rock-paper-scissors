@@ -88,6 +88,7 @@ select {
       --clr-yellow: 47 94% 58%;
       --clr-orange: 19 94% 48%;
       --clr-red: 0 64% 43%;
+      --clr-green: 144 90% 33%;
 }
 
 /* ------------- */
@@ -101,6 +102,7 @@ body {
 }
 
 main.app {
+      z-index: 0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -204,6 +206,99 @@ i {
 .function-test:hover {
       background-color: hsl(var(--clr-orange));
       transition: background-color 200ms ease-in-out;
+}
+
+.modal {
+      visibility: visible;
+      z-index: 1;
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: rgba(0, 0, 0, 0.5)
+}
+
+.modal-content {
+      background-color: hsl(var(--clr-green));
+      padding: 2rem 3rem;
+      border: 3px solid rgba(0, 0, 0, 0.8);
+      border-radius: 5px;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+}
+
+.game-message {
+      font-size: 3.5rem;
+      font-weight: 700;
+}
+
+.game-winner {
+      font-size: 3.5rem;
+      font-weight: 500;
+}
+
+.final-score-header {
+      font-size: 2rem;
+}
+
+.game-final-score {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;    
+}
+
+
+.computer-final-score-container p,
+.player-final-score-container p {
+      font-size: 1.5rem;
+      font-weight: 500;
+}
+
+.computer-final-score-output,
+.player-final-score-output {
+      font-size: 3rem;
+      font-weight: 500;
+}
+
+.computer-final-score-container,
+.player-final-score-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+}
+
+.restart-game {
+      margin-top: 2rem;
+      cursor: pointer;
+      
+      border: solid 3px #333;
+      border-radius: 5px;
+      background-color: inherit;
+      color: #333;
+      padding: 0.6rem 1rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transform: scale(1);
+      transition: all 150ms ease-in-out;
+      transition-property: transform, background-color;
+}
+
+.restart-game:hover {
+      transform: scale(1.1);
+      background-color: whitesmoke;
+      transition: all 200ms ease-in-out;
+      transition-property: transform, background-color;
 }
 
 
